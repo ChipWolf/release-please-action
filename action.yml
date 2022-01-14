@@ -92,6 +92,10 @@ inputs:
     description: 'mark pull request as a draft'
     required: false
     default: false
+  prerelease:
+    description: 'mark pull request as a prerelease'
+    required: false
+    default: false
 
 runs:
   using: 'node12'

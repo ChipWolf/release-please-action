@@ -74,6 +74,7 @@ async function main () {
   const pullRequestTitlePattern = core.getInput('pull-request-title-pattern') || undefined
   const draft = core.getBooleanInput('draft')
   const draftPullRequest = core.getBooleanInput('draft-pull-request')
+  const prerelease = core.getBooleanInput('prerelease')
   const manifest = await Manifest.fromConfig(
     github,
     github.repository.defaultBranch,
@@ -92,7 +93,8 @@ async function main () {
     {
       draft,
       signoff,
-      fork
+      fork,
+      prerelease
     },
     path
   )
